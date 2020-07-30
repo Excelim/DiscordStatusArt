@@ -1,5 +1,5 @@
 # DiscordStatusArt
-Small and easy program made in python using pygame to transform your 11x11 pixel art into discord status emoji pixel art.
+Small and easy program made in python using pygame to transform your 11x10 pixel art into discord status emoji pixel art.
 
 # Showcase
 ![alt text](https://i.imgur.com/xezdo9v.png)
