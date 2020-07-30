@@ -7,7 +7,7 @@ y = 0
 size = 50
 array = []
 
-win = pygame.display.set_mode((size*11, size*11))
+win = pygame.display.set_mode((size*11, size*10))
 pygame.display.set_caption('Discord Status Art     Press CTRL to copy art to clipboard!')
 pygame.key.set_repeat(1, 10)
 ico = pygame.image.load('./assets/icon.png')
@@ -30,12 +30,14 @@ while run:
                 func()
             if event.key == pygame.K_LCTRL or event.key == pygame.K_RCTRL:
                 copystring = ''
-                for xx in range(0, size*11, size):
-                    for yy in range(0, size*11, size):
-                        if [yy, xx] in array:
+                for yy in range(0, size*10, size):
+                    for xx in range(0, size*11, size):
+                        if [xx, yy] in array:
                             copystring += '⬜'
                         else:
                             copystring += '⬛'
+                    copystring += ' '
+                #copystring = copystring[:-1]
                 pyperclip.copy(copystring)
                 pygame.display.set_caption('Copied!')
                 pygame.time.delay(2000)
@@ -47,7 +49,7 @@ while run:
                 x += size
             if event.key == pygame.K_UP and y >= size:
                 y -= size
-            if event.key == pygame.K_DOWN and y < size*10:
+            if event.key == pygame.K_DOWN and y < size*9:
                 y += size
             if event.key == pygame.K_a and x >= size:
                 x -= size 
@@ -55,7 +57,7 @@ while run:
                 x += size
             if event.key == pygame.K_w and y >= size:
                 y -= size
-            if event.key == pygame.K_s and y < size*10:
+            if event.key == pygame.K_s and y < size*9:
                 y += size
     win.fill((25,25,25))
     for square in array:
