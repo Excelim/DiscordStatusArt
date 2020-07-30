@@ -15,3 +15,7 @@ CTRL - copy art to clipboard
 
 # Download
 https://github.com/Excelim/DiscordStatusArt/releases
+
+# Additional info
+## Colored Squares
+Colored squares such as 🟥🟧🟨🟩🟦🟪🟫 are not a feature because square coloring adds one extra character, thats double compared to ⬜ and ⬛. Using colored squares would drastically shrink the canvas, that is already not that big.
